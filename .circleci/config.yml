@@ -5,7 +5,7 @@ orbs:
 jobs:
   build:
     docker: 
-      - image: node:11.1.0-alpine # the primary container, where your job's commands are run
+      - image: docker:stable-git # the primary container, where your job's commands are run
     steps:
       - checkout 
 
