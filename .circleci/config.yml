@@ -21,8 +21,10 @@ jobs:
           docker run -p 3001:3000 --name ra $TAG
           cy:run -- --record --spec "cypress/integration/react_app.js"
           
-           
+          command: |
+             docker exec command curl http://localhost:3000
             
+          docker stop ra
           #docker login -u $DOCKER_USER -p $DOCKER_PASS 
           #docker push jayapulicherla/jayacodesample:$TAG
           
