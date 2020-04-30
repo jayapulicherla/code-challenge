@@ -15,6 +15,14 @@ jobs:
           docker build -t $TAG .
           docker run --p3001:3000 --name ra $TAG
           
-          docker login -u $DOCKER_USER -p $DOCKER_PASS         # (5)
-          docker push $TAG
+   #test:
+    #docker: 
+     # - image: node:11.1.0-alpine # the primary container, where your job's commands are run
+    #Steps:
+     # - checkout
+      #- run:   
+            
+          
+          docker login -u $DOCKER_USER -p $DOCKER_PASS 
+          docker push jayapulicherla/jayacodesample:$TAG
           
