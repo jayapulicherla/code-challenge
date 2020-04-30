@@ -17,6 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open"
+    "cy:run": "cypress run"
   },
   "browserslist": {
     "production": [
