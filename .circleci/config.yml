@@ -4,9 +4,9 @@ jobs:
     docker: 
       - image: node:11.1.0-alpine # the primary container, where your job's commands are run
     steps:
-      - checkout # check out the code in the project directory
+	   - checkout 
 
-       - setup_remote_docker:   # (2)
+		- setup_remote_docker:
           docker_layer_caching: true # (3)
       # build and push Docker image
       - run: |
