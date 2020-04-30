@@ -63,6 +63,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
+1.CI/CD pipeline is built using circleci for this repository
+2.Every time there is a push or merge into the repository, circleci pipeline runs the workflow specified in the config.yml file
+3.The pipeline automatically builds the Docker image and starts a container with that image. Runs the cypress tests and deploys the container image in Docker Hub.
+
+
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
