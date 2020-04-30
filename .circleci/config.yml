@@ -15,7 +15,10 @@ jobs:
           TAG=rtapp.$CIRCLE_BUILD_NUM
           docker build -t $TAG .
           docker run --p3001:3000 --name ra $TAG
+          
+     
+       
             
-          docker login -u $DOCKER_USER -p $DOCKER_PASS 
-          docker push jayapulicherla/jayacodesample:$TAG
+          #docker login -u $DOCKER_USER -p $DOCKER_PASS 
+          #docker push jayapulicherla/jayacodesample:$TAG
           
