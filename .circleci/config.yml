@@ -25,7 +25,8 @@ jobs:
           echo "nammavar periyavar"
           #apt-get install curl cypress
           #curl http://localhost:3000
-          cypress run -- --record --spec "cypress/integration/react_app.js"
+          npx cypress open
+          npx cypress run -- --record --spec "cypress/integration/react_app.js"
                   
           command: |
              echo "nammavar periyavar"
