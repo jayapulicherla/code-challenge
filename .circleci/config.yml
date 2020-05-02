@@ -20,7 +20,8 @@ jobs:
           docker build -t $TAG .
           
           docker run -a stderr ubuntu echo test
-          docker exec command curl http://localhost:3000
+          echo "nammavar periyavar"
+          curl http://localhost:3000
           cypress run -- --record --spec "cypress/integration/react_app.js"
                   
           command: |
