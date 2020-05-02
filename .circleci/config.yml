@@ -7,6 +7,7 @@ jobs:
     docker: 
       - image: docker:stable-git # the primary container, where your job's commands are run
       - image: circleci/buildpack-deps:stable-curl
+      - image: cypress/included:3.2.0
     steps:
       - checkout 
 
@@ -21,8 +22,8 @@ jobs:
           
           docker run -a stderr ubuntu echo test
           echo "nammavar periyavar"
-          apt-get install curl cypress
-          curl http://localhost:3000
+          #apt-get install curl cypress
+          #curl http://localhost:3000
           cypress run -- --record --spec "cypress/integration/react_app.js"
                   
           command: |
