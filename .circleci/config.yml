@@ -23,7 +23,7 @@ jobs:
                   
           command: |
              docker exec command curl http://localhost:3000
-             cy:run -- --record --spec "cypress/integration/react_app.js"
+             cypress run -- --record --spec "cypress/integration/react_app.js"
              echo "nammavar periyavar"
             
           docker stop ra
