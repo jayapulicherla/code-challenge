@@ -21,7 +21,7 @@ jobs:
           
           docker run -a stderr ubuntu echo test
           echo "nammavar periyavar"
-          sudo apt-get install curl cypress
+          apt-get install curl cypress
           curl http://localhost:3000
           cypress run -- --record --spec "cypress/integration/react_app.js"
                   
