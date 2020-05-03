@@ -26,6 +26,7 @@ jobs:
           #docker inspect $TAG
           #docker exec -it $TAG /bin/bash
           #docker exec -it 
+          echo $PWD
           #docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
           docker run -it cypress/included:3.2.0
           docker inspect $TAG
