@@ -23,10 +23,11 @@ jobs:
           #docker run -a stderr ubuntu echo test
           docker run -dit -p 3001:3000 $TAG
           docker ps
-          docker inspect $TAG
-          docker exec -it $TAG /bin/bash
+          #docker inspect $TAG
+          #docker exec -it $TAG /bin/bash
           #docker exec -it 
           docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
+          docker inspect $TAG
           echo "nammavar periyavar"
           #docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
           #apt-get install curl cypress
