@@ -31,6 +31,7 @@ jobs:
           #npx cypress open
           #npx cypress run -- --record --spec "cypress/integration/react_app.js"
                   
+          docker ps
           command: |
              echo "nammavar periyavar"
             
