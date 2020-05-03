@@ -28,6 +28,7 @@ jobs:
           #docker exec -it 
           echo $PWD
           #docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
+          docker run -it -w /app cypress/included:3.2.0
           docker run -it cypress/included:3.2.0
           docker inspect $TAG
           echo "nammavar periyavar"
