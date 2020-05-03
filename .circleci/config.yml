@@ -24,7 +24,7 @@ jobs:
           apk update && apk add curl curl-dev bash
           ls -a .
           docker ps
-          docker run -it -w ./ cypress/included:3.2.0
+          docker run -it -w $PWD cypress/included:3.2.0
           #docker exec -i -t ra sh
           #ssh remote-docker "ls -a .; pwd; curl -L http://localhost:3000"
           #curl -L http://localhost:3000
