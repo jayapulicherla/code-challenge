@@ -7,6 +7,9 @@ RUN npm install react-scripts@3.4.1 -g --silent
 COPY ./ /app/
 COPY cypress/ /app/
 
+FROM cypress/base 
+
+
 
 EXPOSE 3000
 
