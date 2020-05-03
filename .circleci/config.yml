@@ -18,12 +18,13 @@ jobs:
       - run: |
       
           TAG=rtapp.$CIRCLE_BUILD_NUM
-          docker build -t $TAG .
           
           #docker run -a stderr ubuntu echo test
           docker run -dit -p 3001:3000 --name ra $TAG 
+          docker build -t $TAG .
           apk update && apk add curl curl-dev bash
           docker ps
+          curl -L http://localhost:3001
           docker exec ra curl --retry 10 --retry-connrefused http://localhost:3000
           #docker inspect $TAG
           #docker exec -it $TAG /bin/bash
