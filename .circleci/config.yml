@@ -27,7 +27,7 @@ jobs:
           pwd
           docker cp ./ ra:/e2e
           
-          docker exec -ti ra /bin/sh -c "echo inside container "
+          docker exec -i -t ra /bin/sh -c "echo inside container "
           
           pwd
           echo "that was current dir"
