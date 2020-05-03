@@ -27,9 +27,9 @@ jobs:
           pwd
           docker cp ./ ra:/e2e
           echo "test test"
-          docker container exec -it ra ls -l /usr/bin/nodejs 
+          #docker container exec -it ra ls -l /usr/bin/nodejs 
           echo "hi"
-          docker container exec -it ra ls -l /usr/bin/node
+          #docker container exec -it ra ls -l /usr/bin/node
           ls -l ./node_modules/cypress/bin
           ls -l /usr/local/bin
           echo "Trying now"
