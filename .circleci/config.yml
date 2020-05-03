@@ -23,26 +23,23 @@ jobs:
           #docker run -a stderr ubuntu echo test
           docker run -dit -p 3001:3000 $TAG
           docker ps
-          curl http://localhost:3001
           #docker inspect $TAG
           #docker exec -it $TAG /bin/bash
           #docker exec -it 
           echo $PWD
-          echo $LS
           #docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
-          docker run -it -w /app cypress/included:3.2.0
-          docker run -it cypress/included:3.2.0
           docker inspect $TAG
-          echo "nammavar periyavar"
+          #echo "nammavar periyavar"
           #docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
           #apt-get install curl cypress
           #curl http://localhost:3000
           #npx cypress open
           #npx cypress run -- --record --spec "cypress/integration/react_app.js"
                   
-          docker ps
+          #docker ps
           command: |
              echo "nammavar periyavar"
+             curl -L http://localhost:3001
             
           #docker stop ra
           #docker login -u $DOCKER_USER -p $DOCKER_PASS 
