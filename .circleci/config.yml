@@ -27,6 +27,7 @@ jobs:
           pwd
           docker cp ./ ra:/e2e
           echo "test test"
+          docker container exec -it ra apk update && apk add node
           ls -l ./node_modules/cypress/bin
           ls -l /usr/local/bin
           echo "Trying now"
