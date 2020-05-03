@@ -21,16 +21,16 @@ jobs:
           docker build -t $TAG .
           #docker run -a stderr ubuntu echo test
           docker run -dit -p 3001:3000 --name ra $TAG          
-          apk update && apk add curl curl-dev bash
+          #apk update && apk add curl curl-dev bash
           ls -a .
           docker ps
           pwd
           docker cp ./ ra:/e2e
           docker exec -i -t ra /bin/sh
-          ls /
+          ls -a /
           pwd
-          ls .
-          docker run -it -w /e2e cypress/included:3.2.0      
+          ls -a .
+          #docker run -it -w /e2e cypress/included:3.2.0      
           #ssh remote-docker "ls -a .; pwd; curl -L http://localhost:3000"
           #curl -L http://localhost:3000
           #docker exec ra curl --retry 10 --retry-connrefused http://localhost:3000
@@ -39,7 +39,7 @@ jobs:
           #docker exec -it 
           echo $PWD
           #docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
-          docker inspect $TAG
+          #docker inspect $TAG
           #echo "nammavar periyavar"
           #docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
           #apt-get install curl cypress
