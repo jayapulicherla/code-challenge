@@ -33,7 +33,7 @@ jobs:
           #echo "nammavar periyavar"
           #docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
           #apt-get install curl cypress
-          curl -L http://localhost:3000
+          curl -L http://localhost:3001
           #npx cypress open
           #npx cypress run -- --record --spec "cypress/integration/react_app.js"
                   
