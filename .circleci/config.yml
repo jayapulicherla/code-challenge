@@ -23,8 +23,9 @@ jobs:
           docker run -dit -p 3001:3000 --name ra $TAG          
           apk update && apk add curl curl-dev bash
           ls -a .
-          ls -a /app
           docker ps
+          docker exec -i -t ra sh
+          ls 
           ssh remote-docker "ls -a /app; curl -L http://localhost:3000"
           curl -L http://localhost:3000
           docker exec ra curl --retry 10 --retry-connrefused http://localhost:3000
