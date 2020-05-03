@@ -7,9 +7,9 @@ RUN npm install react-scripts@3.4.1 -g --silent
 COPY ./ /app/
 COPY cypress/ /app/
 
-FROM cypress/base:10
-RUN npm install --save-dev cypress
-RUN $(npm bin)/cypress verify
+#FROM cypress/base:10
+#RUN npm install --save-dev cypress
+#RUN $(npm bin)/cypress verify
 
 EXPOSE 3000
 
