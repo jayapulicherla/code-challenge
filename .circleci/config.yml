@@ -23,7 +23,7 @@ jobs:
           docker run -dit -p 3001:3000 --name ra $TAG          
           apk update && apk add curl curl-dev bash
           docker ps
-          curl -L http://localhost:3001
+          curl -L http://localhost:3000
           docker exec ra curl --retry 10 --retry-connrefused http://localhost:3000
           #docker inspect $TAG
           #docker exec -it $TAG /bin/bash
