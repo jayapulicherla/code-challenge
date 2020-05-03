@@ -30,7 +30,7 @@ jobs:
           #docker exec -i -t ra /bin/sh 
           docker container exec -it ra ls /
           echo  "now for app node module bin contents"
-          docker container exec -it ra "ls /app/node_modules/.bin"
+          docker container exec -it ra "cd /app/node_modules/; pwd"
           cho  "now for app contents and run tests"
           #docker container exec -it ra ls /app
           docker container exec -it ra "cd /app/node_modules/.bin; cypress run"
