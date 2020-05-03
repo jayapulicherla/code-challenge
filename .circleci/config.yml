@@ -7,7 +7,7 @@ jobs:
     docker: 
       - image: docker:stable-git # the primary container, where your job's commands are run
       - image: circleci/buildpack-deps:stable-curl
-      - image: cypress/included:3.2.0
+      - image: cypress/included:4.5.0
     steps:
       - checkout 
 
@@ -28,6 +28,7 @@ jobs:
           docker cp ./ ra:/e2e
           
           #docker exec -i -t ra /bin/sh 
+          docker container exec -it ra apk update && apk add xvfb
           docker container exec -it ra ls -l /app
           echo  "now for app node module bin contents"
           #docker container exec -it ra ls -l /app/node_modules/
