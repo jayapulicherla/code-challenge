@@ -23,7 +23,7 @@ jobs:
           docker run -a stderr ubuntu echo test
           docker run -dit -p 3001:3000 $TAG
           docker inspect $TAG
-          docker exec $TAG ls 
+          docker exec $TAG:latest ls 
           #docker exec -it 
           docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
           echo "nammavar periyavar"
