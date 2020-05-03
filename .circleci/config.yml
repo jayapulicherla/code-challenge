@@ -29,7 +29,6 @@ jobs:
           
           #docker exec -i -t ra /bin/sh 
           docker container exec -it ra ls -l /app
-          docker container exec -it ra apt-get 
           echo  "now for app node module bin contents"
           #docker container exec -it ra ls -l /app/node_modules/
           docker container exec -it ra /app/node_modules/.bin/cypress run
