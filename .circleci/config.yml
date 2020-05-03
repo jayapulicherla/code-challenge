@@ -28,6 +28,8 @@ jobs:
           docker cp ./ ra:/e2e
           echo "test test"
           ls -l ./node_modules/cypress/bin
+          ls -l /usr/local/bin
+          echo "Trying now"
           ./node_modules/cypress/bin/cypress run
           #docker exec -i -t ra /bin/sh 
           docker container exec -it ra ls -l /app
