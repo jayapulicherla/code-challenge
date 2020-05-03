@@ -29,6 +29,8 @@ jobs:
           
           #docker exec -i -t ra /bin/sh 
           docker container exec -it ra ls /
+          echo  "now for app contents"
+          docker container exec -it ra ls /app
           
           #-c "echo inside container "
           
@@ -50,7 +52,7 @@ jobs:
           #echo "nammavar periyavar"
           #docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
           #apt-get install curl cypress
-          curl -L http://host.docker.internal:3001
+          #curl -L http://host.docker.internal:3001
           #npx cypress open
           #npx cypress run -- --record --spec "cypress/integration/react_app.js"
                   
