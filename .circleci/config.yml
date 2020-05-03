@@ -26,6 +26,7 @@ jobs:
           docker ps
           pwd
           docker cp ./ ra:/e2e
+          
           docker exec -i -t ra /bin/sh
           echo "inside container "
           pwd
