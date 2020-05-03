@@ -28,7 +28,7 @@ jobs:
           docker cp ./ ra:/e2e
           
           #docker exec -i -t ra /bin/sh 
-          docker exec -it ubuntu_bash ls /
+          docker exec -it ra ls /
           
           #-c "echo inside container "
           
