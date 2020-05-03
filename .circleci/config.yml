@@ -26,7 +26,7 @@ jobs:
           docker ps
           pwd
           docker cp ./ ra:/e2e
-          docker exec -i -t ra /bin/bash
+          docker exec -i -t ra /bin/sh
           ls /
           pwd
           ls .
