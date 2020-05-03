@@ -25,9 +25,12 @@ jobs:
           ls -a .
           docker ps
           pwd
-          docker run -it -v /root/project:/e2e -w /e2e cypress/included:3.2.0
-          #docker run -it -w $PWD cypress/included:3.2.0
-          #docker exec -i -t ra sh
+          docker cp ./ ra:/e2e
+          docker run -it -w /e2e cypress/included:3.2.0
+          docker exec -i -t ra /bin/bash
+          ls /
+          pwd
+          ls .
           #ssh remote-docker "ls -a .; pwd; curl -L http://localhost:3000"
           #curl -L http://localhost:3000
           #docker exec ra curl --retry 10 --retry-connrefused http://localhost:3000
