@@ -24,7 +24,7 @@ jobs:
           docker run -dit -p 3001:3000 $TAG
           docker ps
           docker inspect $TAG
-          docker exec $TAG:latest ls 
+          docker exec -it $TAG /bin/bash
           #docker exec -it 
           docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
           echo "nammavar periyavar"
