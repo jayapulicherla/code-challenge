@@ -27,7 +27,8 @@ jobs:
           pwd
           docker cp ./ ra:/e2e
           
-          docker exec -i -t ra /bin/sh 
+          #docker exec -i -t ra /bin/sh 
+          docker exec -it ubuntu_bash ls /
           
           #-c "echo inside container "
           
