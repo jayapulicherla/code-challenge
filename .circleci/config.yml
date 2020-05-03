@@ -29,8 +29,9 @@ jobs:
           
           #docker exec -i -t ra /bin/sh 
           docker container exec -it ra ls /
-          echo  "now for app contents"
-          docker container exec -it ra ls /app
+          echo  "now for app contents and run tests"
+          #docker container exec -it ra ls /app
+          docker container exec -it "cd /app/node_modules/.bin; cypress run"
           
           #-c "echo inside container "
           
@@ -47,7 +48,7 @@ jobs:
           #docker exec -it $TAG /bin/bash
           #docker exec -it 
           echo $PWD
-          #docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
+          docker container exec run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
           #docker inspect $TAG
           #echo "nammavar periyavar"
           #docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
