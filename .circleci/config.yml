@@ -27,9 +27,12 @@ jobs:
           pwd
           docker cp ./ ra:/e2e
           docker exec -i -t ra /bin/sh
-          ls -a /
+          echo "inside container "
           pwd
-          ls -a .
+          echo "that was current dir"
+          ls /
+          echo "after root dir"
+          ls .
           #docker run -it -w /e2e cypress/included:3.2.0      
           #ssh remote-docker "ls -a .; pwd; curl -L http://localhost:3000"
           #curl -L http://localhost:3000
