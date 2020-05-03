@@ -24,6 +24,7 @@ jobs:
           docker run -dit -p 3001:3000 $TAG
           apk update && apk add curl curl-dev bash
           docker ps
+          docker exec $TAG curl --retry 10 --retry-connrefused http://localhost:8080
           #docker inspect $TAG
           #docker exec -it $TAG /bin/bash
           #docker exec -it 
