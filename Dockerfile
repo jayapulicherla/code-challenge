@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 # Install Node.js
 RUN apt-get update
 RUN apt-get install --yes curl

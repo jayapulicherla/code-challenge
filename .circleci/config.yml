@@ -33,10 +33,11 @@ jobs:
           ls -l ./node_modules/cypress/bin
           ls -l /usr/local/bin
           echo "Trying now"
-          ./node_modules/cypress/bin/cypress run
+          
           #docker exec -i -t ra /bin/sh 
           docker container exec -it ra ls -l /app
           docker container exec -it ra find . -name *vfb*
+          
           echo  "now for app node module bin contents"
           #docker container exec -it ra ls -l /app/node_modules/
           docker container exec -it ra /app/node_modules/.bin/cypress run
