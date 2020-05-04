@@ -1,5 +1,5 @@
 version: 2.1
-orbs:
+
   docker: circleci/docker@1.0.1
     
 jobs:
@@ -30,13 +30,12 @@ jobs:
           #docker container exec -it ra ls -l /usr/bin/nodejs 
           echo "hi"
           #docker container exec -it ra ls -l /usr/bin/node
-          ls -l ./node_modules/cypress/bin
-          ls -l /usr/local/bin
+         
           echo "Trying now"
           
           #docker exec -i -t ra /bin/sh 
-          docker container exec -it ra ls -l /app
-          docker container exec -it ra find . -name *vfb*
+          #docker container exec -it ra ls -l /app
+          #docker container exec -it ra find . -name *vfb*
           
           echo  "now for app node module bin contents"
           #docker container exec -it ra ls -l /app/node_modules/
@@ -44,7 +43,8 @@ jobs:
           echo  "now for app contents and run tests"
           #docker container exec -it ra ls /app
           #docker container exec -it ra "cd /app/node_modules/.bin; cypress run"
-          
+          #ls -l ./node_modules/cypress/bin
+          #ls -l /usr/local/bin
           #-c "echo inside container "
           
           pwd
