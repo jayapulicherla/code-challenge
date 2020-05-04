@@ -6,7 +6,7 @@ RUN curl --silent --location https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install --yes nodejs
 RUN apt-get install --yes build-essential
 RUN apt-get install  --yes xvfb
-RUN apt-get install --yes libgtk2.0-0 libxtst6 libnss3 lib* libgtk-3-0 
+RUN apt-get install --yes libgtk2.0-0 libxtst6 libnss3 libgtk-3-0 
 RUN apt-get install --yes libgtk-3-dev libxss1 libasound2
 
 WORKDIR /app
