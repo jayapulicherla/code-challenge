@@ -38,6 +38,7 @@ jobs:
           #docker container exec -it ra find . -name *vfb*
           
           echo  "now for app node module bin contents"
+          #docker container exec -it ra apt-get install xvfb
           #docker container exec -it ra ls -l /app/node_modules/
           docker container exec -it ra /app/node_modules/.bin/cypress run
           echo  "now for app contents and run tests"
