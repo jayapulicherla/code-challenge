@@ -7,74 +7,24 @@ jobs:
     docker: 
       - image: docker:stable-git # the primary container, where your job's commands are run
       - image: circleci/buildpack-deps:stable-curl
-      #- image: cypress/included:4.5.0
+     
     steps:
       - checkout 
 
       - setup_remote_docker:
           docker_layer_caching: true # (3)
-          
-      # build and push Docker image
+     
       - run: |
       
           TAG=rtapp.$CIRCLE_BUILD_NUM
           docker build -t $TAG .
-          #docker run -a stderr ubuntu echo test
           docker run -dit -p 3001:3000 --name ra $TAG          
-          #apk update && apk add curl curl-dev bash
-          ls -a .
-          docker ps
-          pwd
-          docker cp ./ ra:/e2e
-          echo "test test"
-          #docker container exec -it ra ls -l /usr/bin/nodejs 
-          echo "hi"
-          #docker container exec -it ra ls -l /usr/bin/node
          
-          echo "Trying now"
-          
-          #docker exec -i -t ra /bin/sh 
-          #docker container exec -it ra ls -l /app
-          #docker container exec -it ra find . -name *vfb*
-          
-          echo  "now for app node module bin contents"
-          #docker container exec -it ra apt-get install xvfb
-          #docker container exec -it ra ls -l /app/node_modules/
+          docker cp ./ ra:/e2e
+   
+          echo  "Run cypress run"
           docker container exec -it ra /app/node_modules/.bin/cypress run
-          echo  "now for app contents and run tests"
-          #docker container exec -it ra ls /app
-          #docker container exec -it ra "cd /app/node_modules/.bin; cypress run"
-          #ls -l ./node_modules/cypress/bin
-          #ls -l /usr/local/bin
-          #-c "echo inside container "
-          
-          pwd
-          echo "that was current dir"
-          ls /
-          echo "after root dir"
-          ls .
-          #docker run -it -w /e2e cypress/included:3.2.0      
-          #ssh remote-docker "ls -a .; pwd; curl -L http://localhost:3000"
-          #curl -L http://localhost:3000
-          #docker exec ra curl --retry 10 --retry-connrefused http://localhost:3000
-          #docker inspect $TAG
-          #docker exec -it $TAG /bin/bash
-          #docker exec -it 
-          echo $PWD
-          docker container exec run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
-          #docker inspect $TAG
-          #echo "nammavar periyavar"
-          #docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
-          #apt-get install curl cypress
-          #curl -L http://host.docker.internal:3001
-          #npx cypress open
-          #npx cypress run -- --record --spec "cypress/integration/react_app.js"
-                  
-          #docker ps
-          command: |
-             echo "nammavar periyavar"
-             curl -L http://localhost:3001
-            
+         
           #docker stop ra
           #docker login -u $DOCKER_USER -p $DOCKER_PASS 
           #docker push jayapulicherla/jayacodesample:$TAG
