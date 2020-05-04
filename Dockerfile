@@ -1,4 +1,11 @@
-FROM node:11.1.0-alpine as build
+FROM ubuntu:16.04
+# Install Node.js
+RUN apt-get update
+RUN apt-get install --yes curl
+RUN curl --silent --location https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install --yes nodejs
+RUN apt-get install --yes build-essential
+
 WORKDIR /app
 COPY package*.json /app/
 COPY cypress.json /app/
